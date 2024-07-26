@@ -50,6 +50,7 @@ module Debase
     def self.deduce_packaged_source_dir(ruby_dir)
       prefix = File.dirname(__FILE__) + '/ruby_core_source/'
       expected_directory = prefix + ruby_dir
+      raise expected_directory
       if (RUBY_REVISION.is_a? String or RUBY_REVISION > 0) and File.directory?(expected_directory)
         expected_directory
       else
